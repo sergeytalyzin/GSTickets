@@ -15,9 +15,10 @@ export const DAYS = ["вс","пн","вт","ср","чт","пт","сб"]
 export const formatDate = (date) =>{
   const arrayDate = date.split('')
   const time = `${arrayDate[11]}${arrayDate[12]}:${arrayDate[14]}${arrayDate[15]}`
-  const month =  `${arrayDate[5]}${arrayDate[6]} ${MONTH[arrayDate[6]]}`
-  const day = DAYS[new Date(date).getDay()]
-  return `${time} ${month} ${day}`
+  const month =  `${MONTH[arrayDate[6]]}`
+  const day = new Date(date).getDay() < 10 ? '0'+ new Date(date).getDay() : new Date(date).getDay();
+  const daysOfTheWeek = DAYS[new Date(date).getDay()]
+  return `${time} ${day} ${month} ${daysOfTheWeek}`
 }
 
 export const formatTime = (t) => {
