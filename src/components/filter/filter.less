@@ -1,0 +1,32 @@
+.filter {
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 10px;
+  background-color: white;
+
+}
+.filter__by-price {
+  display: flex;
+  flex-direction: column;
+}
+.filter__price-lb {
+  position: relative;
+  margin-left: 20px;
+  &::before {
+    position: absolute;
+    content: '';
+    top: 2px;
+    left: -20px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #d8d8d8;
+  }
+}
+.filter__by-price input:checked + label::before {
+  background-color: #0076ff;
+}
+.filter__price-min,
+.filter__price-max {
+  margin-left: 20px;
+}

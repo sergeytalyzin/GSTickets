@@ -1,1 +1,1 @@
-# GSTickets
+Запускать по команде npm start

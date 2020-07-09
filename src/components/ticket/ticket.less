@@ -1,0 +1,94 @@
+.ticket {
+  width: 650px;
+  margin-bottom: 20px;
+}
+.ticket__header {
+  display: flex;
+  justify-content: space-between;
+  height: 45px;
+  padding: 7px;
+  padding-right: 20px;
+  font-size: 26px;
+  background-color: #425668;
+  color: #b0c6c2;
+}
+.ticket__price {
+  position: relative;
+  margin: 0;
+  margin-top: 2px;
+  padding: 0;
+  &::after {
+    position: absolute;
+    content: 'Стоимость для одного взрослого пассажира';
+    font-size: 13px;
+    width: 300px;
+    top: 31px;
+    left: -156px;
+  }
+}
+
+.ticket__main {
+  min-height: 190px;
+  padding-top: 15px;
+  color: #263540;
+  background-color: #ffffff;
+}
+.ticket__departure {
+
+  margin-left: 50px;
+  margin-right: 15px;
+}
+.ticket__arrival {
+  margin-left: 12px;
+}
+hr {
+  margin: 10px;
+}
+
+.ticket__info {
+  display: flex;
+  justify-content: space-around;
+}
+.ticket__button {
+  height: 40px;
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  background: linear-gradient(to right,#db0402,#f41b19,#d40201,#f71c0c,#fa211c,#de0503);
+  border: 1px solid transparent;
+  font-size: 20px;
+}
+
+.ticket__main{
+  position: relative;
+  &::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    top: 149px;
+    left: 0;
+    background-color: #425668;
+  }
+}
+.ticket__airline-caption {
+  margin-bottom: 30px;
+  margin-left: 51px;
+}
+.ticket__flaying-time {
+  position: relative;
+ &::before {
+   position: absolute;
+   content: '';
+   width: 30px;
+   height: 30px;
+   top: -7px;
+   left: -29px;
+   background-image: url("../../../src/img/clock.png");
+   background-repeat: no-repeat;
+   background-position: center;
+ }
+}
+
+
