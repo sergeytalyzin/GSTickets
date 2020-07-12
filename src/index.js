@@ -1,11 +1,20 @@
 import React from "react";
 import ReactDom from "react-dom";
 import App from "./components/app/app";
-import {data} from "./mocks/mocks"
-import withFilterAndSortList from "./hocs/withFilterAndSortList";
-const informationFlying = data.result.flights
-const AppWrapper = withFilterAndSortList(App)
+import {createStore, applyMiddleware} from "redux";
+import {composeWithDevTools} from "redux-devtools-extension";
+import thunk from "redux-thunk";
+import {Provider} from "react-redux";
+import {reducer} from "./reducer/reducer";
+
+
+const store = createStore(reducer, composeWithDevTools(
+    applyMiddleware(thunk)
+));
+
 ReactDom.render(
-    <AppWrapper data={informationFlying}/>,
+    <Provider store={store}>
+      <App/>
+    </Provider>,
     document.querySelector(`#root`)
 );
